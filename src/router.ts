@@ -2,7 +2,17 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from 'vue-router/auto-routes'
 
-export const router = createRouter({
+const customRoutes = [
+  {
+    path: '/',
+    redirect: '/inventory',
+  },
+  ...routes,
+]
+
+const router = createRouter({
   history: createWebHistory(),
-  routes: setupLayouts(routes),
+  routes: setupLayouts(customRoutes),
 })
+
+export default router

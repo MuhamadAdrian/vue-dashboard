@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import AppHeader from '@/components/app/header/AppHeader.vue'
 import AppSidebar from '@/components/app/sidebar/AppSidebar.vue'
-import SiteHeader from '@/components/SiteHeader.vue'
 import SidebarInset from '@/components/ui/sidebar/SidebarInset.vue'
 import SidebarProvider from '@/components/ui/sidebar/SidebarProvider.vue'
 </script>
@@ -14,7 +14,7 @@ import SidebarProvider from '@/components/ui/sidebar/SidebarProvider.vue'
   >
     <AppSidebar variant="inset" />
     <SidebarInset>
-      <SiteHeader />
+      <AppHeader />
       <div class="flex flex-1 flex-col">
         <div class="@container/main flex flex-1 flex-col gap-2">
           <div class="flex flex-col gap-4 py-4 md:gap-6 md:py-6">

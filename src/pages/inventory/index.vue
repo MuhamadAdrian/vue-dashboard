@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import ChartAreaInteractive from '@/components/ChartAreaInteractive.vue'
-import SectionCards from '@/components/SectionCards.vue'
+import ChartAreaInteractive from '@/components/chart/ChartAreaInteractive.vue'
+import SectionCards from '@/components/section/SectionCards.vue'
 </script>
 
 <template>
   <SectionCards class="mb-10" />
-  <ChartAreaInteractive />
+  <ChartAreaInteractive class="mb-10" />
   <ChartAreaInteractive />
 </template>
 

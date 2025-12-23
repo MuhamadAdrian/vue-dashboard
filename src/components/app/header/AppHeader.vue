@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { IBreadcrumbItem } from './app/breadcrumb/types'
+import type { IBreadcrumbItem } from '@/components/app/breadcrumb/types'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import AppBreadcrumb from '@/components/app/breadcrumb/AppBreadcrumb.vue'
+import Button from '@/components/ui/button/Button.vue'
 import { Separator } from '@/components/ui/separator'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import menus from '@/config/menu'
-import AppBreadcrumb from './app/breadcrumb/AppBreadcrumb.vue'
-import Button from './ui/button/Button.vue'
 
 const route = useRoute()
 
