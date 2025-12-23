@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Toaster } from 'vue-sonner'
 import AppHeader from '@/components/app/header/AppHeader.vue'
 import AppSidebar from '@/components/app/sidebar/AppSidebar.vue'
 import SidebarInset from '@/components/ui/sidebar/SidebarInset.vue'

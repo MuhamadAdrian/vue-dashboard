@@ -1,7 +1,9 @@
+<script setup lang="ts">
+import ProductDashboard from '@/components/inventory/products/ProductDashboard.vue'
+</script>
+
 <template>
-  <h1 class="text-3xl font-bold">
-    Products
-  </h1>
+  <ProductDashboard />
 </template>
 
 <route lang="yaml">
