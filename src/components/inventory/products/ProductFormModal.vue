@@ -48,15 +48,15 @@ const onSubmit = form.handleSubmit(async () => {
   <Dialog :open="true" @update:open="$emit('close')">
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>
-        <DialogTitle>Tambah Produk Baru</DialogTitle>
+        <DialogTitle>Add New Product</DialogTitle>
       </DialogHeader>
 
       <form class="space-y-4" @submit="onSubmit">
         <FormField v-slot="{ componentField }" name="name">
           <FormItem>
-            <FormLabel>Nama Produk</FormLabel>
+            <FormLabel>Product Name</FormLabel>
             <FormControl>
-              <Input placeholder="Contoh: Laptop Gaming" v-bind="componentField" :disabled="isLoading" />
+              <Input placeholder="Ex: Laptop Gaming" v-bind="componentField" :disabled="isLoading" />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -64,7 +64,7 @@ const onSubmit = form.handleSubmit(async () => {
 
         <FormField v-slot="{ componentField }" name="category">
           <FormItem>
-            <FormLabel>Kategori</FormLabel>
+            <FormLabel>Category</FormLabel>
             <FormControl>
               <Input placeholder="Electronics" v-bind="componentField" :disabled="isLoading" />
             </FormControl>
@@ -74,7 +74,7 @@ const onSubmit = form.handleSubmit(async () => {
 
         <FormField v-slot="{ componentField }" name="price">
           <FormItem>
-            <FormLabel>Harga (IDR)</FormLabel>
+            <FormLabel>Price</FormLabel>
             <FormControl>
               <Input type="number" v-bind="componentField" :disabled="isLoading" />
             </FormControl>
@@ -82,13 +82,23 @@ const onSubmit = form.handleSubmit(async () => {
           </FormItem>
         </FormField>
 
+        <FormField v-slot="{ componentField }" name="description">
+          <FormItem>
+            <FormLabel>Description</FormLabel>
+            <FormControl>
+              <Input type="text" v-bind="componentField" :disabled="isLoading" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        </FormField>
+
         <div class="flex justify-end gap-3 pt-4">
           <Button type="button" variant="ghost" :disabled="isLoading" @click="$emit('close')">
-            Batal
+            Cancel
           </Button>
           <Button type="submit" :disabled="isLoading">
             <Loader2 v-if="isLoading" class="w-4 h-4 mr-2 animate-spin" />
-            {{ isLoading ? 'Menyimpan...' : 'Simpan Produk' }}
+            {{ isLoading ? 'Saving...' : 'Save' }}
           </Button>
         </div>
       </form>

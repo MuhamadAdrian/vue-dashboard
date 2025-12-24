@@ -6,7 +6,6 @@ import SectionCards from '@/components/section/SectionCards.vue'
 <template>
   <SectionCards class="mb-10" />
   <ChartAreaInteractive class="mb-10" />
-  <ChartAreaInteractive />
 </template>
 
 <route lang="yaml">

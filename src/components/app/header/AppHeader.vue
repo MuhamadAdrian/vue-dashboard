@@ -21,7 +21,7 @@ const breadcrumbs = computed<IBreadcrumbItem[]>(
   >
     <div class="flex h-(--header-height) shrink-0 items-center gap-2">
       <div
-        class="flex w-full items-center gap-1 px-4 pt-2 lg:pt-0 lg:gap-2 lg:px-6"
+        class="flex w-full items-center gap-1 px-4 pt-2 lg:pt-4 lg:gap-2 lg:px-6"
       >
         <SidebarTrigger class="-ml-1" />
         <Separator

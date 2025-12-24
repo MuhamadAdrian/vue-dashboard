@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ISectionEmpty } from './types'
 import { IconMoodEmpty } from '@tabler/icons-vue'
-import { Cloud } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import {
   Empty,
@@ -16,7 +15,7 @@ defineProps<ISectionEmpty>()
 </script>
 
 <template>
-  <Empty class="border border-dashed">
+  <Empty>
     <EmptyHeader>
       <EmptyMedia variant="icon">
         <IconMoodEmpty />
