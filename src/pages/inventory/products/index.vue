@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ResponseDataPagination } from '@/api/types'
 import type { Header } from '@/components/app/table/types'
-import type { Product } from '@/schema/productSchema'
+import type { Product } from '@/schema/inventory/productSchema'
 import { computed, ref } from 'vue'
 import AppFilter from '@/components/app/filter/AppFilter.vue'
 import AppTable from '@/components/app/table/AppTable.vue'
@@ -44,7 +44,7 @@ const { api } = useApi()
 
 // real use case fetching data
 const { data, loading, search, page, refetch } = useTableQuery({
-  key: ['data-santri'],
+  key: ['products'],
   apiMethod: api.products.get,
   serverSide: true,
 })
@@ -95,7 +95,6 @@ function handleDetailAction(item: Product, action: 'view' | 'edit') {
   formType.value = action
 
   initialValues.value = dataSample.value.data.find(d => d.id === item.id)
-  console.log(initialValues.value)
   isCreateModalOpen.value = true
 }
 </script>

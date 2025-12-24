@@ -25,10 +25,6 @@ defineProps<ISectionEmpty>()
         {{ description }}
       </EmptyDescription>
     </EmptyHeader>
-    <EmptyContent>
-      <Button variant="outline" size="sm" @click="action">
-        {{ actionTitle }}
-      </Button>
-    </EmptyContent>
+    <EmptyContent />
   </Empty>
 </template>

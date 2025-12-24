@@ -1,5 +1,5 @@
 import type { ResponseData, ResponseDataPagination } from '@/api/types'
-import type { Product, ProductFormValues } from '@/schema/productSchema'
+import type { Product, ProductFormValues } from '@/schema/inventory/productSchema'
 import BaseApiModule from '@/api'
 
 class ProductModule extends BaseApiModule {

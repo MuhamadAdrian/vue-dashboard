@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DateValue } from '@internationalized/date'
 import type { Ref } from 'vue'
-import type { ProductFormValues } from '@/schema/productSchema'
+import type { ProductFormValues } from '@/schema/inventory/productSchema'
 import { getLocalTimeZone, today } from '@internationalized/date'
 
 import { toTypedSchema } from '@vee-validate/zod'
@@ -21,7 +21,7 @@ import { Switch } from '@/components/ui/switch'
 import { Textarea } from '@/components/ui/textarea'
 
 import { cn } from '@/lib/utils'
-import { productSchema } from '@/schema/productSchema'
+import { productSchema } from '@/schema/inventory/productSchema'
 
 interface Props {
   initialValues: Record<string, any>

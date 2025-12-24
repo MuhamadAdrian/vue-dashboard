@@ -40,6 +40,7 @@ const modelValue = useVModel(props, 'modelValue', emits, {
       type="text"
       :name="name"
       :class="[inputClass, { 'ps-11': prefixIcon }]"
+      class="sm:text-base text-sm"
       :disabled="disabled"
       :aria-describedby="id || name"
       :placeholder="placeholder"

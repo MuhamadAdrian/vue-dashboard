@@ -73,7 +73,7 @@ const { toggleSidebar, isMobile } = useSidebar()
                     custom
                   >
                     <SidebarMenuButton
-                      class="cursor-pointer"
+                      class="cursor-pointer h-9"
                       :tooltip="item.title"
                       :is-active="isExactActive"
                       @click="

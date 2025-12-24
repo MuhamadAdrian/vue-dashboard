@@ -62,7 +62,7 @@ const itemNumber = computed(() => {
 </script>
 
 <template>
-  <div class="border rounded-2xl bg-white dark:border-neutral-700 dark:divide-neutral-700">
+  <div class="border rounded-2xl bg-white dark:bg-neutral-900 dark:divide-neutral-700">
     <div v-if="!noAction" class="flex md:flex-row flex-col justify-between items-center mb-2 gap-2">
       <div class="p-4 md:min-w-[40%] md:w-auto w-full">
         <div v-if="showSearch" class="relative md:max-w-xs">
@@ -82,7 +82,7 @@ const itemNumber = computed(() => {
       <Table class="mb-6 sm:text-base">
         <TableHeader>
           <TableRow>
-            <TableHead v-for="head, index in headers" :key="index" class="font-bold bg-accent py-4" scope="col" :class="[setAlignment(head.align), head.headerClass]">
+            <TableHead v-for="head, index in headers" :key="index" class="font-bold sm:text-base text-sm bg-accent py-4" scope="col" :class="[setAlignment(head.align), head.headerClass]">
               <slot :name="`header.${head.value}`" :head="head">
                 {{ head.label }}
               </slot>
@@ -90,12 +90,12 @@ const itemNumber = computed(() => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow v-if="loading" class="hover:bg-white">
+          <TableRow v-if="loading" class="hover:bg-white sm:text-base text-sm">
             <TableCell :colspan="headers.length">
               <LoaderCircle class="mt-10 h-6 w-6 animate-spin mx-auto" />
             </TableCell>
           </TableRow>
-          <TableRow v-else-if="!items || items.length === 0" class="hover:bg-white">
+          <TableRow v-else-if="!items || items.length === 0" class="hover:bg-white dark:hover:bg-background">
             <TableCell :colspan="headers.length">
               <SectionEmpty title="Empty" description="There is no data" action-title="Create New One" />
             </TableCell>
