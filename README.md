@@ -48,17 +48,25 @@ Using Zod, we define the shape of our data once in /schema. These schemas power 
 4. Enterprise UI System
 The dashboard utilizes ShadCN Vue, providing accessible, customizable, and consistent UI components that follow the best practices of modern dashboard design.
 
+## 📋 Prerequisites
+Before you begin, ensure you have met the following requirements to ensure a smooth development experience:
+
+**Runtime & Environment**
+- Bun: Version 1.0.0 or higher. This project uses Bun for its significantly faster install times and all-in-one runner.
+- Node.js: (Optional) If you don't have Bun, you can use Node.js 24.x or higher, but bun.lockb is the primary lockfile.
+- Operating System: macOS, Linux, or Windows.
+
 ## 🚦 Getting Started
-Prerequisites
-Install Bun (highly recommended for this project).
+**Prerequisites**
+[Install Bun](https://bun.com/docs/installation#windows) (highly recommended for this project).
 
 **Installation**
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/erp-starter.git
+git clone https://github.com/MuhamadAdrian/vue-dashboard.git
 
 # Navigate to directory
-cd erp-starter
+cd vue-dashboard
 
 # Install dependencies using Bun
 bun install
