@@ -143,7 +143,7 @@
 
 .page-slide-enter-from {
   opacity: 0;
-  transform: translateY(30px) scale(0.98); /* Sedikit scale untuk efek depth */
+  transform: translateY(30px) scale(0.98);
 }
 
 .page-slide-leave-to {
@@ -151,31 +151,26 @@
   transform: translateY(-30px);
 }
 
-/* Animasi saat elemen masuk dan keluar */
 .sidebar-slide-enter-active,
 .sidebar-slide-leave-active {
   transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-/* Kondisi saat list baru masuk (muncul dari kiri) */
 .sidebar-slide-enter-from {
   opacity: 0;
   transform: translateX(-30px);
 }
 
-/* Kondisi saat list lama keluar (bergeser ke kanan dan hilang) */
 .sidebar-slide-leave-to {
   opacity: 0;
   transform: translateX(30px);
 }
 
-/* Penting: Agar item yang tidak berubah posisinya tetap bergerak mulus */
 .sidebar-slide-move {
   transition: transform 0.4s ease;
 }
 
-/* Menghindari 'jumping' saat elemen dihapus dari DOM */
 .sidebar-slide-leave-active {
   position: absolute;
-  width: 100%; /* Pastikan lebar tetap sesuai container sidebar */
+  width: 100%;
 }
