@@ -2,8 +2,7 @@
 import type { ResponseDataPagination } from '@/api/types'
 import type { Header } from '@/components/app/table/types'
 import type { Product } from '@/schema/productSchema'
-import { computed, onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { computed, ref } from 'vue'
 import AppFilter from '@/components/app/filter/AppFilter.vue'
 import AppTable from '@/components/app/table/AppTable.vue'
 import AppTableAction from '@/components/app/table/AppTableAction.vue'
@@ -16,6 +15,7 @@ const headers = ref<Header[]>([
   {
     label: 'No',
     value: 'no',
+    align: 'center',
   },
   {
     label: 'Name',
@@ -82,9 +82,28 @@ const filteredProducts = computed(() => {
 })
 
 const isCreateModalOpen = ref(false)
+const formType = ref<undefined | 'edit' | 'view'>(undefined)
+const initialValues = ref()
+
+function handleModalOnClose() {
+  isCreateModalOpen.value = false
+
+  formType.value = undefined
+}
+
+function handleDetailAction(item: Product, action: 'view' | 'edit') {
+  formType.value = action
+
+  initialValues.value = dataSample.value.data.find(d => d.id === item.id)
+  console.log(initialValues.value)
+  isCreateModalOpen.value = true
+}
 </script>
 
 <template>
+  <h1 class="text-3xl font-bold mb-4">
+    Product Management
+  </h1>
   <AppTable
     v-model:search="search"
     v-model:page="page"
@@ -109,14 +128,16 @@ const isCreateModalOpen = ref(false)
       <AppTableAction
         :id="item.id"
         :delete-action="() => api.products.delete(item.id)"
+        :edit-action="() => handleDetailAction(item, 'edit')"
+        :view-action="() => handleDetailAction(item, 'view')"
         :title="item.name"
-        path="data-santri"
+        path="inventory"
         :refresh="refetch"
       />
     </template>
   </AppTable>
 
-  <ProductFormModal v-if="isCreateModalOpen" @close="isCreateModalOpen = false" />
+  <ProductFormModal v-if="isCreateModalOpen" :type="formType" :initial-values="initialValues" @close="handleModalOnClose" />
 </template>
 
 <route lang="yaml">

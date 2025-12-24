@@ -16,7 +16,6 @@ interface Props {
   description?: string
   loading?: boolean
   confirmText?: string
-  type?: 'warning' | 'danger' | 'default'
   cancelText?: string
 }
 

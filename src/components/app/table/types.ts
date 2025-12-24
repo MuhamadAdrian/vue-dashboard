@@ -49,5 +49,7 @@ export interface Props<T> {
   loading?: boolean
   deletePath?: string
   deleteAction?: () => Promise<T>
+  editAction?: () => void
+  viewAction?: () => void
   refresh?: () => void
 }

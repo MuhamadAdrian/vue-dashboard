@@ -8,7 +8,7 @@ import AppModal from '@/components/app/modal/AppModal.vue'
 import Button from '@/components/ui/button/Button.vue'
 import { useApi } from '@/composables/useApi'
 
-const { id, path, refresh, deletePath, deleteAction } = defineProps<Props<T>>()
+const { id, path, refresh, deletePath, deleteAction, editAction, viewAction } = defineProps<Props<T>>()
 
 const router = useRouter()
 
@@ -21,11 +21,21 @@ function handleAction(type: 'view' | 'edit' | 'delete') {
   }
 
   // On View
-  if (type === 'view')
-    router.push(`/${routePath}/${id}${routeQuery}`)
-  else if (type === 'edit')
-    router.push(`/${routePath}/edit/${id}${routeQuery}`)
-  else handleShowModalDelete()
+  if (type === 'view') {
+    if (viewAction)
+      viewAction()
+    else
+      router.push(`/${routePath}/${id}${routeQuery}`)
+  }
+  else if (type === 'edit') {
+    if (editAction)
+      editAction()
+    else
+      router.push(`/${routePath}/edit/${id}${routeQuery}`)
+  }
+  else {
+    handleShowModalDelete()
+  }
 }
 
 const showDeleteModal = ref(false)
